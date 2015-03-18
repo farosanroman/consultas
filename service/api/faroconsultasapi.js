@@ -2,7 +2,7 @@ exports.register = function (api) {
        
         //Trae Requeridos, Asignados y Vancantes agrupados por NodoFuncional o Rol
         api.get('getconsultasvacantes', getconsultasvacantes);
-        
+        // Nodo Funcional y Roles Pivoteados
         api.get('getconsultasfuncionalrol', getconsultasfuncionalrol);
              
 };

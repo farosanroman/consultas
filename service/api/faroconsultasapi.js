@@ -10,9 +10,10 @@ exports.register = function (api) {
 
 function xo (request, response){
    //https://farodosconsultas2015.azure-mobile.net/api/faroconsultasapi/xo?select top 1 from persona 
-   var query= request.body.query;
+   //var query= request.body.query;
+   var sql= request.query.squery
       //console.log(query );
-	  var sql = "query ";
+	  //var sql =querys;
           
     executewithoutparam(request,sql, response);
     //response.send(200, sql);

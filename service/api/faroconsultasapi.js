@@ -13,10 +13,9 @@ function xo (request, response){
    //var query= request.body.query;
    var param1= "1";       
       var params=[param1];
-   var sql= "EXEC [farodosnodos2015].[xo] @query=? " 
+   var sql= "EXEC [farodosconsultas2015].[xo] @query=? " 
    console.log(sql );      
-    execute(request, sql, params, response);
-    //response.send(200, sql);    
+    execute(request, sql, params, response);       
 };
 
 function getconsultasfuncionalrol(request, response){

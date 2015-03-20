@@ -11,10 +11,11 @@ exports.register = function (api) {
 function xo (request, response){
    //https://farodosconsultas2015.azure-mobile.net/api/faroconsultasapi/xo?squery=select top 1 * from persona 
    //var query= request.body.query;
-   var param1= request.query.querys;  
+   var param1= parseInt(request.query.caso); 
+   var param2= request.query.qry;  
    //var sql= "select  top 1000 * from persona"     
-   var params=[param1];
-   var sql= "[farodosconsultas2015].[xo] @querys=? " ;      
+   var params=[param1, param2];
+   var sql= "EXEC [farodosconsultas2015].[xo] @caso=? , @qry=?" ;      
    console.log(sql);      
    execute(request, sql, params, response);       
 };

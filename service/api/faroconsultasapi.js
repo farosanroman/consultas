@@ -26,7 +26,9 @@ function getconsultasfuncionalrol(request, response){
 
         var params=[param1,param2];
         
-        var sql = "EXEC [farodosconsultas2015].[FaroConsultasFuncionalRol] @IdOrganizacion=?, @IdNodoOrganizacional = ? ";
+        //var sql = "EXEC [farodosconsultas2015].[FaroConsultasFuncionalRol] @IdOrganizacion=?, @IdNodoOrganizacional = ? ";
+        
+        var sql = "Select top 10 nombre1 from persona where nombre1 is not null"
         execute(request, sql, params, response);  
 };
 

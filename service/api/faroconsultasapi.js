@@ -9,7 +9,12 @@ exports.register = function (api) {
 };
 
 function xo (request, response){
-  var param1 =1
+   var query= request.body.query;
+      //console.log(query );
+	  var sql = "query ";
+          
+    executewithoutparam(request,sql, response);
+    //response.send(200, sql);
     
 };
 

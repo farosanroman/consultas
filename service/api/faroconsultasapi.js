@@ -9,7 +9,7 @@ exports.register = function (api) {
 };
 
 function xo (request, response){
-   //https://farodosconsultas2015.azure-mobile.net/api/faroconsultasapi/xo?squery=select top 1 * from persona 
+   //https://farodosconsultas2015.azure-mobile.net/api/faroconsultasapi/xo?caso=1&qry=0018
    //var query= request.body.query;
    var param1= parseInt(request.query.caso); 
    var param2= request.query.qry;  

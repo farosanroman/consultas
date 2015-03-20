@@ -13,7 +13,8 @@ function xo (request, response){
    //var query= request.body.query;
    var param1= "1";       
       var params=[param1];
-   var sql= "EXEC [farodosconsultas2015].[xo] @query=? " 
+   //var sql= "EXEC [farodosconsultas2015].[xo] @query=? " 
+   var sql = "Select top 1000 * from dbo.persona where nombre1 is not null"
    console.log(sql );      
     execute(request, sql, params, response);       
 };
@@ -26,9 +27,9 @@ function getconsultasfuncionalrol(request, response){
 
         var params=[param1,param2];
         
-        //var sql = "EXEC [farodosconsultas2015].[FaroConsultasFuncionalRol] @IdOrganizacion=?, @IdNodoOrganizacional = ? ";
+        var sql = "EXEC [farodosconsultas2015].[FaroConsultasFuncionalRol] @IdOrganizacion=?, @IdNodoOrganizacional = ? ";
         
-        var sql = "Select top 1000 * from persona where nombre1 is not null"
+        
         execute(request, sql, params, response);  
 };
 

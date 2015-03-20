@@ -14,8 +14,8 @@ function xo (request, response){
    var param1= request.query.querys;  
    //var param1= "select  top 1000 * from persona"     
    var params=[param1];
-   var sql= "EXEC [farodosconsultas2015].[xo] @querys=? "       
-   console.log(sql );      
+   var sql= "EXEC [farodosconsultas2015].[xo] @querys=? " ;      
+   console.log(sql);      
    execute(request, sql, params, response);       
 };
 

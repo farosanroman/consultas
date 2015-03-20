@@ -12,10 +12,15 @@ function xo (request, response){
    //https://farodosconsultas2015.azure-mobile.net/api/faroconsultasapi/xo?caso=1&qry=0018
    //var query= request.body.query;
    var param1= parseInt(request.query.caso); 
-   var param2= request.query.qry;  
+   var param2= request.query.qry; 
+   var param3= request.query.p1; 
+   var param4= request.query.p2; 
+   var param5= request.query.p3; 
+   var param6= request.query.p4; 
+   var param7= request.query.p5;  
    //var sql= "select  top 1000 * from persona"     
-   var params=[param1, param2];
-   var sql= "EXEC [farodosconsultas2015].[xo] @caso=? , @qry=?" ;      
+   var params=[param1, param2, param3, param4, param5, param6, param7];
+   var sql= "EXEC [farodosconsultas2015].[xo] @caso=?, @qry=?, @p1=?, @p2=?, @p3=?, @p4=?, @p5=?" ;      
    console.log(sql);      
    execute(request, sql, params, response);       
 };

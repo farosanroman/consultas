@@ -13,7 +13,7 @@ function xo (request, response){
    //var query= request.body.query;
    var sql1= '"'+request.query.squery+'"'
       console.log(sql1 );  
-   var sql= "[farodosnodos2015].[xo] 'e' " 
+   var sql= "EXEC [farodosnodos2015].[xo] 'e' " 
    console.log(sql );      
     executewithoutparam(request,sql, response);
     //response.send(200, sql);

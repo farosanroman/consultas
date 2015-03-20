@@ -11,12 +11,11 @@ exports.register = function (api) {
 function xo (request, response){
    //https://farodosconsultas2015.azure-mobile.net/api/faroconsultasapi/xo?squery=select top 1 * from persona 
    //var query= request.body.query;
-   var param1= "1";       
-      var params=[param1];
-   //var sql= "EXEC [farodosconsultas2015].[xo] @query=? " 
-   var sql = "Select top 1000 * from dbo.persona where nombre1 is not null"
+   var param1= request.query.querys;       
+   var params=[param1];
+   var sql= "EXEC [farodosconsultas2015].[xo] @querys=? "       
    console.log(sql );      
-    execute(request, sql, params, response);       
+   execute(request, sql, params, response);       
 };
 
 function getconsultasfuncionalrol(request, response){
@@ -28,8 +27,7 @@ function getconsultasfuncionalrol(request, response){
         var params=[param1,param2];
         
         var sql = "EXEC [farodosconsultas2015].[FaroConsultasFuncionalRol] @IdOrganizacion=?, @IdNodoOrganizacional = ? ";
-        
-        
+              
         execute(request, sql, params, response);  
 };
 

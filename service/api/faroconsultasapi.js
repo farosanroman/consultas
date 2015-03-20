@@ -11,13 +11,13 @@ exports.register = function (api) {
 function xo (request, response){
    //https://farodosconsultas2015.azure-mobile.net/api/faroconsultasapi/xo?squery=select top 1 * from persona 
    //var query= request.body.query;
-   var sql1= '"'+request.query.squery+'"'
-      console.log(sql1 );  
-   var sql= "EXEC [farodosnodos2015].[xo] 'e' " 
+   var param1= request.query.query
+      console.log(sql );  
+      var params=[param1];
+   var sql= "EXEC [farodosnodos2015].[xo] @query=? " 
    console.log(sql );      
-    executewithoutparam(request,sql, response);
-    //response.send(200, sql);
-    
+    execute(request, sql, params, response);
+    //response.send(200, sql);    
 };
 
 function getconsultasfuncionalrol(request, response){

@@ -9,8 +9,7 @@ exports.register = function (api) {
 };
 
 function xo (request, response){
-   //https://farodosconsultas2015.azure-mobile.net/api/faroconsultasapi/xo?caso=1&qry=0018
-   //var query= request.body.query;
+   //https://farodosconsultas2015.azure-mobile.net/api/faroconsultasapi/xo?caso=1&qry=0018&p1=0&p2=0&p3=0&p4=0&p5=0
    var param1= parseInt(request.query.caso); 
    var param2= request.query.qry; 
    var param3= request.query.p1; 
@@ -21,7 +20,7 @@ function xo (request, response){
    //var sql= "select  top 1000 * from persona"     
    var params=[param1, param2, param3, param4, param5, param6, param7];
    var sql= "EXEC [farodosconsultas2015].[xo] @caso=?, @qry=?, @p1=?, @p2=?, @p3=?, @p4=?, @p5=?" ;      
-   console.log(sql);      
+   //console.log(sql);      
    execute(request, sql, params, response);       
 };
 

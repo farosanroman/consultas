@@ -4,25 +4,7 @@ exports.register = function (api) {
         api.get('getconsultasvacantes', getconsultasvacantes);
         // Nodo Funcional y Roles Pivoteados
         api.get('getconsultasfuncionalrol', getconsultasfuncionalrol);
-        api.get('xo', xo);
-        api.get('xo2', xo2);
-             
-};
-
-
-function xo2 (request, response){
-   //https://farodosconsultas2015.azure-mobile.net/api/faroconsultasapi/xo2?
-    
-   var sql= "select top 5 * from persona" ;      
-   var mssql = request.service.mssql;     
-    mssql.query('select top 5 * from persona', {
-        success: function(results) {
-            console.log(results);
-        },
-        error: function(err) {
-            console.log("error is: " + err);
-        }
-    });       
+        api.get('xo', xo);   
 };
 
 function xo (request, response){

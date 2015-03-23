@@ -25,7 +25,7 @@ function xo (request, response){
 };
 function getconsultasnodospivoterol(request, response){
 
-        //https://farodosconsultas2015.azure-mobile.net/api/faroconsultasapi/getconsultasfuncionalrol?idorganizacion=10&idnodoorganizacional=2
+       //https://farodosconsultas2015.azure-mobile.net/api/faroconsultasapi/getconsultasnodospivoterol?idorganizacion=10&idnodoorganizacional=2&roles=2,10,23
         var param1 = parseInt(request.query.idorganizacion);
         var param2 = parseInt(request.query.idnodoorganizacional);        
         var param3 = request.query.roles;        

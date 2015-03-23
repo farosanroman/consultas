@@ -33,7 +33,11 @@ function getconsultasnodospivoterol(request, response){
         var params=[param1,param2,param3];
         
         var sql = "EXEC [farodosconsultas2015].[FaroConsultasNodosPivoteRol] @idorganizacion=?, @idnodoorganizacional = ?, @roles = ? ";
+              console.log(param1.toString())
+               console.log(param2.toString())
+                console.log(param3.toString())
               console.log(sql)
+              
         execute(request, sql, params, response);  
 };
 

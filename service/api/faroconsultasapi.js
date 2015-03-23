@@ -4,6 +4,7 @@ exports.register = function (api) {
         api.get('getconsultasvacantes', getconsultasvacantes);
         // Nodo Funcional y Roles Pivoteados
         api.get('getconsultasfuncionalrol', getconsultasfuncionalrol);
+        api.get('getconsultaspivoterol', getconsultaspivoterol);
         api.get('xo', xo);   
 };
 
@@ -21,6 +22,19 @@ function xo (request, response){
    var sql= "EXEC [farodosconsultas2015].[xo] @caso=?, @qry=?, @p1=?, @p2=?, @p3=?, @p4=?, @p5=?" ;      
    //console.log(sql);      
    execute(request, sql, params, response);       
+};
+function getconsultasnodospivoterol(request, response){
+
+        //https://farodosconsultas2015.azure-mobile.net/api/faroconsultasapi/getconsultasfuncionalrol?idorganizacion=10&idnodoorganizacional=2
+        var param1 = parseInt(request.query.idorganizacion);
+        var param2 = parseInt(request.query.idnodoorganizacional);        
+        var param3 = request.query.roles;        
+
+        var params=[param1,param2,param3];
+        
+        var sql = "EXEC [farodosconsultas2015].[FaroConsultasNodosPivoteRol] @IdOrganizacion=?, @IdNodoOrganizacional = ?, @roles = ? ";
+              
+        execute(request, sql, params, response);  
 };
 
 function getconsultasfuncionalrol(request, response){

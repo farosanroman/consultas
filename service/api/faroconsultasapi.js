@@ -4,7 +4,7 @@ exports.register = function (api) {
         api.get('getconsultasvacantes', getconsultasvacantes);
         // Nodo Funcional y Roles Pivoteados
         api.get('getconsultasfuncionalrol', getconsultasfuncionalrol);
-        api.get('getconsultaspivoterol', getconsultaspivoterol);
+        api.get('getconsultasnodospivoterol', getconsultasnodospivoterol);
         api.get('xo', xo);   
 };
 
